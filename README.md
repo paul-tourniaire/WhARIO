@@ -5,7 +5,7 @@ Code associated to the [article](): *WhARIO: Whole-slide-image-based survival An
 
 WhARIO is a 3-step pipeline to extract features from Whole-Slide Images (WSIs) to predict lung cancer patient survival following immunotherapy:
 
-<img src="./assets/whario-overview.png" height="250" />
+<img src="./assets/whario-overview.png" height="400" />
 
 ## Step 1: Contrastive Learning
 
@@ -19,18 +19,21 @@ For clustering, we use a nonparametric deep clustering algorithm called DeepDPM 
 
 ## Step 3: Survival analysis
 
-The first step in this section is to compute the cluster adjacency matrices. Once the matrices are available, the feature forward selection algorithm chooses which cluster interactions are the most correlated to survival. Finally, a Cox PH model is trained thanks to these features to predict patient survival.
+The first step in this section is to compute the cluster adjacency matrices. Once the matrices are available, the feature forward selection algorithm chooses which cluster interactions are the most correlated to survival. Finally, a Cox PH model is trained thanks to these features to predict patient survival. The three consecutive steps are:
+
+1. Find the neighboring tiles in each slide based on their coordinates.
+2. Compute the cluster adjacency matrices.
+3. Predict patient survival using the matrices defined in the previous step.
 
 ### Get neighboring tiles
 
-For this part, each slide should be saved as a h5 file which contains a key `coords` to store the coordinates of each tile in the slide. It is divided in two consecutive steps:
+For this part, each slide should be saved as a h5 file which contains a key `coords` to store the coordinates of each tile in the slide.
 
-1. Compute the cluster adjacency matrices.
-2. Predict patient survival using the matrices defined in the previous step.
+**TODO: Add neighboring tiles retrieval script.**
 
 ### Get cluster adjacency matrix
 
-**TODO: Add adjacency matrix script. **
+**TODO: Add adjacency matrix script.**
 
 ### Feature selection and survival prediction
 
