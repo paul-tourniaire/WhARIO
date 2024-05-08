@@ -28,3 +28,7 @@ For this section, each slide should be saved as a h5 file which contains a key `
 ### Get cluster adjacency matrix
 
 ### Feature selection and survival prediction
+
+The feature selection process and survival prediction is detailed in the jupyter notebook `survival_prediction.ipynb`. To run the notebook, make sure the clinical data is saved according to the format of the .xlsx spreadsheet `clinical_data.xlsx`.
+
+For each slide in the dataset, there should also be a matching `.pkl` file (python pickle file) containing a cluster adjacency matrix of size $K\times(K+1)$ (where $K$ is the number of clusters) as a `numpy` array.
